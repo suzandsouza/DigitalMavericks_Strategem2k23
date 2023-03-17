@@ -164,7 +164,7 @@ const PatientRegistrationFrom = () => {
     })
     return (
         <section className='patient_form_container'>
-            <Title>Patient RegisTration Form</Title>
+            <Title>Patient Registration Form</Title>
             <section className='form'>
                 <Form
                     form={form}

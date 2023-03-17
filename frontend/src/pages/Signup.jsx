@@ -1,5 +1,6 @@
 import { Button, Card, Form, Input, Divider } from "antd";
 import { Link } from "react-router-dom";
+import Navbar from "../components/Navbar";
 export default function Signup(){
   return (
       <div className="containerControllerLogin">

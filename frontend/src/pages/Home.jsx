@@ -25,7 +25,7 @@ export default function Home() {
           </Button>
         </Col>
       </Col>
-      <div className="features">
+      <div className="features" id="feature">
         <h1 className="heading">Our Unique Features</h1>
         <Divider className="divider" />
         <Row className="cardController">

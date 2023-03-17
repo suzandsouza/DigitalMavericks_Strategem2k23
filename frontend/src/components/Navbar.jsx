@@ -1,6 +1,7 @@
 import { Row, message } from "antd";
 import React from "react";
 import { AiOutlineLogout } from "react-icons/ai";
+import "../pages/Home"
 
 export default function Navbar() {
   return (
@@ -13,12 +14,12 @@ export default function Navbar() {
           CareConnect
         </a>
         <a
-          href=""
+          href="/"
         >
           About
         </a>
         <a
-          href=""
+          href="#feature"
         >
           Features
         </a>
