@@ -1,6 +1,9 @@
 .homeContainer {
+    .footer-home {
+      text-align: center;
+      padding: 0.25rem;
+    }
     .containerController {
-    //   background-image: url("./background.png");
       height: 90vh;
       display: flex;
       justify-content: center;
@@ -8,22 +11,23 @@
         width: 80%;
         margin: auto;
         h1 {
-          font-size: 4.2rem;
-          font-weight: 600;
+          font-size: 2.4rem;
+          font-weight: 620;
           width: 80%;
         }
         h2 {
-          font-size: 2.2rem;
+          font-size: 1.5rem;
           color: #8c8c8c;
           width: 80%;
         }
         .button {
-          height: 3rem;
+          height: 2.5rem;
+          font-size: 1rem;
           font-weight: 600;
           margin: 0;
           border-radius: 8px;
           margin-top: 2rem;
-          width: 20rem;
+          width: 10rem;
         }
       }
     }
@@ -44,7 +48,7 @@
       margin: 0.4rem auto;
     }
     .cardController {
-      margin: 5rem 0;
+      margin: 3rem 0;
       justify-content: space-around;
       // width: 80%;
       // margin: auto;
