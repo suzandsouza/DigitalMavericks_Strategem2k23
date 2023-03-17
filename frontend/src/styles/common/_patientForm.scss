@@ -1,0 +1,43 @@
+@use "variables" as var;
+.patient_form_container{
+    margin-bottom: 20px;
+    text-align: center;
+    .form{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        form{
+            padding:15px;
+            border-radius:  4px;
+            background-color: var.$background-color-form;
+            width: 90%;
+
+            .patient__records{
+                .ant-row{
+                    .ant-col{
+                        .ant-form-item{
+                            margin: 0px 5px ;
+                        }
+                    }
+                }
+                button{
+                    width: 100%;
+                    margin-top: 10px;
+                    margin-bottom: 10px;
+                    background : transparent;
+                    color:black;
+                    padding: 12px;
+                    height: fit-content;
+                    &:hover{
+                        background-color: lightcyan;
+                        border-color: black;
+                    }
+                }
+            }
+            button{
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+    }
+}
