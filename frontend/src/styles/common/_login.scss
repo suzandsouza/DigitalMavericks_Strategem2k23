@@ -1,6 +1,6 @@
 
 .containerControllerLogin {
-    background-image: url('../assets/radiant-gradient.svg');
+    background-image: url('../assets/logbg.png');
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover; 
@@ -9,12 +9,17 @@
     justify-content: center;
     align-items: center;
     padding: 0 15px;
-    .card {
+    .cardl {
       max-width: 500px;
       margin: 0 auto;
-      box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.1);
-      border-radius: 5px;
+      box-shadow: 12px 15px 40px 2px rgba(0, 0, 0, 0.5);
+      // box-shadow: 9px 10px 35px -1px rgba(0,0,0,0.75);
+      // -webkit-box-shadow: 9px 10px 35px -1px rgba(0,0,0,0.75);
+      // -moz-box-shadow: 9px 10px 35px -1px rgba(0,0,0,0.75);
+
+      border-radius: 10px;
       text-align: center;
+      opacity: 1;
       h1 {
         font-weight: 600;
       }

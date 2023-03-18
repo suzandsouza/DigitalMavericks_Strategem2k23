@@ -4,7 +4,7 @@ export default function Login() {
   return (
     <Row className="containerControllerLogin">
       <Col xs={24} sm={4} md={6} lg={8} xl={12}>
-        <Card className="card">
+        <Card className="cardl">
           <h1>Login</h1>
           <h2>
             Don't have an account? <a href="/signup">Sign Up</a>
