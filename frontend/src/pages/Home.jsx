@@ -1,59 +1,66 @@
 import React from 'react'
-import { Button, Card, Col, Divider, Row } from "antd";
+import { Divider, Card, Avatar, Row, Col, Button } from "antd"
+import { Link } from "react-router-dom"
 import PatientRegistrationFrom from "../components/Patient/PatientRegistrationFrom.jsx"
-import Navbar from '../components/Navbar.jsx';
-import homebg from '../assets/homebg.png'
-import image1 from "../assets/image1.png"
-import image2 from "../assets/image2.png"
-import image3 from "../assets/image3.png"
+import { data } from '../components/Cards/dummyData.jsx'
+const Home = () => {
 
-export default function Home() {
-  return (
-    <div className='homeContainer'>
-      <Navbar />
-      <Col className="containerController">
-      <img src={homebg} alt="homebg" />
-        <Col className="text">
-          <h1>
-            Booking An Appointment
-            <br />
-            Made Easy!
-          </h1>
-          <h2>We provide safe, secure and hasslefree patient registration.</h2>
-          <Button type="primary" className="button">
-            <a href="/signup">Signup Now!</a>
-          </Button>
-        </Col>
+  const [role, setRole] = React.useState(JSON.parse(localStorage.getItem("User")) || "")
+  const { Meta } = Card
+  const [allAppointmentsData, setAppointmentData] = React.useState(data)
+
+  const appointCard = allAppointmentsData?.map((app, index) => {
+    console.log(app)
+    return (
+      <Col sm={24} md={6} lg={8} key={index}>
+        <Link to={`/auth/${app.patientName}`}>
+          <Card
+            style={{
+              width: "100%"
+            }}
+
+          >
+            <Meta
+              avatar={<Avatar src={app.doctorImage} size={"large"} />}
+              title={app.doctorName}
+              description={app.reason}
+            />
+            <Divider orientation='left'> Reason</Divider>
+            <p>{app.reason}</p>
+            <Divider orientation='left'></Divider>
+            <div className='timeslot'>
+              <p>{app.Date} , {app.Day}</p>
+            </div>
+          </Card>
+        </Link>
       </Col>
-      <div className="features" id="feature">
-        <h1 className="heading">Our Unique Features</h1>
-        <Divider className="divider" />
-        <Row className="cardController">
-          <Card className="card">
-            <h1>Face Authentication</h1>
-            <p>
-              Authenticate Yourself Securely With Your Face!
-            </p>
-            <img alt="image1" src={image1} />
-          </Card>
-          <Card className="card">
-            <h1>Digital Medical Records</h1>
-            <p>
-            You Can Upload The Records Before Your Visit!
-            </p>
-            <img alt="image2" src={image2} />
-          </Card>
-          <Card className="card">
-            <h1>Get Tokens Virtually</h1>
-            <p>
-              Hasslefree token System for patients
-            </p>
-            <img alt="image3" src={image3} />
-          </Card>
+    )
+  })
+  return (
+    <div className='home_container book_appointment_section'>
+      {
+        role === "Patient" ?
+          <Button type="primary" ><Link to={"/appointment"}>Book Appointment </Link></Button>
+
+          :
+          ""
+      }
+      {
+        role &&
+        <Divider orientation='left'><h1>{role === "patient" ? "Your Appointments" : "All Appointment"}</h1></Divider>
+      }     
+       {
+        !appointCard || role !== "admin/Doctor"? 
+            <Button><Link to={"/appointment"}>Book Appointment</Link></Button>
+        :
+        <Row gutter={[16, 16]}>
+          {appointCard}
         </Row>
-      </div>
-      <Navbar />
-      <p className='footer-home'>Made With ❤ By Team Digital Mavericks</p>
+      } 
+      {/* HElLp */}
+      {/* <PatientRegistrationFrom /> */}
     </div>
-  );
+  )
 }
+
+export default Home

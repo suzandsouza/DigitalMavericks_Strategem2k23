@@ -22,8 +22,8 @@ const App = () => {
             location === "/signup" ?
               <Signup />
               : 
-              location === "/"?
-              <Home />
+            location === "/" ?
+              <Outlet/>
               :
               <>
                 <CustomSlider />

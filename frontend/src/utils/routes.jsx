@@ -2,7 +2,9 @@ import Login from "../pages/Login"
 import Signup from "../pages/Signup"
 import Home from "../pages/Home"
 import App from "../App"
+import AuthPatient from "../components/Patient/AuthPatient"
 import PatientRegistrationFrom from "../components/Patient/PatientRegistrationFrom"
+import LandingPage from "../components/LandingPage"
 export const routers= [
     {
         path:"/",
@@ -10,7 +12,7 @@ export const routers= [
         children : [
             {
                 index : true,
-                element : <Home />
+                element : <LandingPage />
             },
             {
                 path  : "/login",
@@ -23,7 +25,16 @@ export const routers= [
             {
                 path : "/appointment",
                 element : <PatientRegistrationFrom/>
+            },
+            {
+                path : `/auth/:name`,
+                element : <AuthPatient/>
+            },
+            {
+                path : `/dashboard`,
+                element : <Home/>
             }
+            
             
         ]
     }
