@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button, Card, Col, Divider, Row } from "antd";
-import PatientRegistrationFrom from "../components/Patient/PatientRegistrationFrom.jsx"
-// import Navbar from '../components/Navbar.jsx';
+import PatientRegistrationFrom from "../components/Navbar"
+import Navbar from '../components/Navbar';
 import homebg from '../assets/homebg.png'
 import image1 from "../assets/image1.png"
 import image2 from "../assets/image2.png"
@@ -10,6 +10,7 @@ import image3 from "../assets/image3.png"
 export default function Home() {
   return (
     <div className='homeContainer'>
+      <Navbar />
       <Col className="containerController">
       <img src={homebg} alt="homebg" />
         <Col className="text">
@@ -51,7 +52,7 @@ export default function Home() {
           </Card>
         </Row>
       </div>
-      {/* <Navbar /> */}
+      <Navbar />
       <p className='footer-home'>Made With ❤ By Team Digital Mavericks</p>
     </div>
   );

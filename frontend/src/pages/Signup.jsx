@@ -31,8 +31,8 @@ export default function Signup() {
     setRole(e)
   }
   return (
-    <div className="containerController">
-      <Card className="card">
+    <div className="containerControllerLogin">
+      <Card className="cardl">
         <h1>Sign up</h1>
         <h2>
           Already have an account? <a href="/login">Sign In</a>
